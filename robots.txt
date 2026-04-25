@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.haskayanakliyat.com.tr/sitemap.xml
+
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /tmp/

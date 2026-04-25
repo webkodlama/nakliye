@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Blog | Nakliyat Rehberi ve İpuçları | Haskaya Nakliyat</title>
+    <meta name="description" content="Nakliyat hakkında bilmeniz gereken her şey. Taşınma ipuçları, paketleme rehberi, nakliyat fiyatları hakkında güncel yazılar.">
+    <meta name="keywords" content="nakliyat blog, taşınma ipuçları, evden eve nakliyat rehberi, paketleme önerileri">
+    <link rel="canonical" href="https://www.haskayanakliyat.com.tr/blog.html">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-truck-moving"></i></div>
+                <div class="logo-text">
+                    <span class="logo-main">HASKAYA</span>
+                    <span class="logo-sub">NAKLİYAT</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#about">Hakkımızda</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        Hizmetlerimiz <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="evden-eve-nakliyat.html">Evden Eve Nakliyat</a></li>
+                        <li><a href="sehirler-arasi-nakliyat.html">Şehirler Arası Nakliyat</a></li>
+                        <li><a href="ofis-tasimaciligi.html">Ofis Taşımacılığı</a></li>
+                        <li><a href="esya-depolama.html">Eşya Depolama</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="fiyat-hesaplama.html">Fiyat Hesaplama</a></li>
+                <li><a href="index.html#contact">İletişim</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="tel:+902120000000" class="phone-btn">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>0212 000 00 00</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="index.html#about">Hakkımızda</a></li>
+            <li><a href="index.html#services">Hizmetlerimiz</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="fiyat-hesaplama.html">Fiyat Hesaplama</a></li>
+            <li><a href="index.html#contact">İletişim</a></li>
+        </ul>
+    </div>
+
+    <!-- Blog Header -->
+    <section style="padding: 140px 0 60px; background: linear-gradient(135deg, var(--dark) 0%, var(--primary-dark) 100%);">
+        <div class="container">
+            <div style="text-align: center; color: var(--white);">
+                <h1 style="font-size: 42px; margin-bottom: 16px;">Nakliyat Blog</h1>
+                <p style="font-size: 18px; opacity: 0.9;">Taşınma hakkında bilmeniz gereken her şey</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section style="padding: 80px 0; background: var(--light);">
+        <div class="container">
+            <!-- Featured Post -->
+            <div style="margin-bottom: 60px;">
+                <article style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-lg);">
+                    <div style="height: 400px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=800" alt="Taşınma öncesi yapılması gerekenler" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                        <span style="display: inline-block; background: var(--primary); color: var(--white); padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 16px; width: fit-content;">Öne Çıkan</span>
+                        <h2 style="font-size: 28px; margin-bottom: 16px; color: var(--dark);">Taşınmadan Önce Yapılması Gerekenler</h2>
+                        <p style="color: var(--gray); line-height: 1.7; margin-bottom: 24px;">Ev taşımak, yeni bir başlangıcın habercisi olsa da, detaylı bir planlama gerektiren karmaşık bir süreçtir. İşte taşınma öncesi dikkat etmeniz gereken tüm detaylar...</p>
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                            <span style="color: var(--gray); font-size: 14px;"><i class="far fa-calendar" style="margin-right: 6px;"></i>15 Ocak 2024</span>
+                            <span style="color: var(--gray); font-size: 14px;"><i class="far fa-clock" style="margin-right: 6px;"></i>8 dk okuma</span>
+                        </div>
+                        <a href="#" style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary); font-weight: 600; text-decoration: none;">
+                            Devamını Oku <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Blog Grid -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <!-- Blog Card 1 -->
+                <article style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400" alt="Paketleme teknikleri" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                    <div style="padding: 24px;">
+                        <span style="color: var(--primary); font-size: 12px; font-weight: 600;">PAKETLEME</span>
+                        <h3 style="font-size: 18px; margin: 12px 0; color: var(--dark);">Eşyaları Güvenli Paketleme Teknikleri</h3>
+                        <p style="color: var(--gray); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">Kırılabilir eşyalarınızı nasıl güvenle paketleyeceğinizi öğrenin...</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="color: var(--gray); font-size: 13px;">10 Ocak 2024</span>
+                            <a href="#" style="color: var(--primary);"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 2 -->
+                <article style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400" alt="Nakliyat firması seçimi" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                    <div style="padding: 24px;">
+                        <span style="color: var(--primary); font-size: 12px; font-weight: 600;">REHBER</span>
+                        <h3 style="font-size: 18px; margin: 12px 0; color: var(--dark);">Güvenilir Nakliyat Firması Nasıl Seçilir?</h3>
+                        <p style="color: var(--gray); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">Doğru nakliyat firmasını seçmek için dikkat etmeniz gereken 10 kriter...</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="color: var(--gray); font-size: 13px;">8 Ocak 2024</span>
+                            <a href="#" style="color: var(--primary);"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 3 -->
+                <article style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="İstanbul nakliyat" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                    <div style="padding: 24px;">
+                        <span style="color: var(--primary); font-size: 12px; font-weight: 600;">İSTANBUL</span>
+                        <h3 style="font-size: 18px; margin: 12px 0; color: var(--dark);">İstanbul'da Taşınmanın Püf Noktaları</h3>
+                        <p style="color: var(--gray); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">İstanbul'un yoğun trafiğinde sorunsuz taşınma için ipuçları...</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="color: var(--gray); font-size: 13px;">5 Ocak 2024</span>
+                            <a href="#" style="color: var(--primary);"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 4 -->
+                <article style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400" alt="Asansörlü nakliyat" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                    <div style="padding: 24px;">
+                        <span style="color: var(--primary); font-size: 12px; font-weight: 600;">HİZMETLER</span>
+                        <h3 style="font-size: 18px; margin: 12px 0; color: var(--dark);">Asansörlü Nakliyat Ne Zaman Gerekir?</h3>
+                        <p style="color: var(--gray); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">Yüksek katlı binalarda asansörlü taşımanın avantajları...</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="color: var(--gray); font-size: 13px;">3 Ocak 2024</span>
+                            <a href="#" style="color: var(--primary);"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 5 -->
+                <article style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=400" alt="Eşya depolama" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                    <div style="padding: 24px;">
+                        <span style="color: var(--primary); font-size: 12px; font-weight: 600;">DEPO</span>
+                        <h3 style="font-size: 18px; margin: 12px 0; color: var(--dark);">Eşya Depolama Rehberi</h3>
+                        <p style="color: var(--gray); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">Uzun süreli eşya depolamada dikkat edilmesi gerekenler...</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="color: var(--gray); font-size: 13px;">1 Ocak 2024</span>
+                            <a href="#" style="color: var(--primary);"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Blog Card 6 -->
+                <article style="background: var(--white); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s;">
+                    <div style="height: 200px; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=400" alt="Ofis taşıma" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;">
+                    </div>
+                    <div style="padding: 24px;">
+                        <span style="color: var(--primary); font-size: 12px; font-weight: 600;">KURUMSAL</span>
+                        <h3 style="font-size: 18px; margin: 12px 0; color: var(--dark);">Ofis Taşıma Checklist'i</h3>
+                        <p style="color: var(--gray); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">İş yerinizi taşırken iş sürekliliğini korumanın yolları...</p>
+                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                            <span style="color: var(--gray); font-size: 13px;">28 Aralık 2023</span>
+                            <a href="#" style="color: var(--primary);"><i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Pagination -->
+            <div style="display: flex; justify-content: center; gap: 10px; margin-top: 60px;">
+                <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--primary); color: var(--white); border-radius: 8px; text-decoration: none; font-weight: 600;">1</a>
+                <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--white); color: var(--dark); border-radius: 8px; text-decoration: none;">2</a>
+                <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--white); color: var(--dark); border-radius: 8px; text-decoration: none;">3</a>
+                <a href="#" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: var(--white); color: var(--dark); border-radius: 8px; text-decoration: none;"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section style="padding: 80px 0; background: var(--white);">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <h2 style="margin-bottom: 16px; color: var(--dark);">Bültenimize Abone Olun</h2>
+                <p style="color: var(--gray); margin-bottom: 30px;">Yeni yazılarımızdan ve nakliyat ipuçlarından haberdar olun.</p>
+                <form style="display: flex; gap: 12px;">
+                    <input type="email" placeholder="E-posta adresiniz" style="flex: 1; padding: 16px; border: 2px solid var(--light); border-radius: 10px; outline: none;">
+                    <button type="submit" style="padding: 16px 32px; background: var(--primary); color: var(--white); border: none; border-radius: 10px; font-weight: 600; cursor: pointer;">
+                        Abone Ol
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="/" class="footer-logo">
+                            <div class="logo-icon"><i class="fas fa-truck-moving"></i></div>
+                            <div class="logo-text">
+                                <span class="logo-main">HASKAYA</span>
+                                <span class="logo-sub">NAKLİYAT</span>
+                            </div>
+                        </a>
+                        <p class="footer-desc">1996'dan beri İstanbul'da profesyonel nakliyat hizmetleri sunuyoruz.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Hızlı Bağlantılar</h4>
+                        <ul>
+                            <li><a href="#home">Ana Sayfa</a></li>
+                            <li><a href="#about">Hakkımızda</a></li>
+                            <li><a href="#services">Hizmetlerimiz</a></li>
+                            <li><a href="evden-eve-nakliyat-fiyatlari.html">Fiyatlar</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Hizmetlerimiz</h4>
+                        <ul>
+                            <li><a href="evden-eve-nakliyat.html">Evden Eve Nakliyat</a></li>
+                            <li><a href="sehirler-arasi-nakliyat.html">Şehirler Arası Nakliyat</a></li>
+                            <li><a href="ofis-tasimaciligi.html">Ofis Taşımacılığı</a></li>
+                            <li><a href="esya-depolama.html">Eşya Depolama</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>İletişim</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i><a href="tel:+902120000000">0212 000 00 00</a></li>
+                            <li><i class="fas fa-envelope"></i><a href="mailto:info@haskayanakliyat.com.tr">info@haskayanakliyat.com.tr</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 1996 - 2024 Haskaya Nakliyat. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

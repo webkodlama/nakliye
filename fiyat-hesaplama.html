@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nakliyat Fiyat Hesaplama 2024 | Haskaya Nakliyat</title>
+    <meta name="description" content="Online nakliyat fiyat hesaplama aracı. Evden eve ve şehirler arası taşıma fiyatlarını anında hesaplayın.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .calculator-page { padding: 140px 0 60px; background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); }
+        .calculator-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .calc-form { background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+        .calc-result { background: #fff; padding: 40px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); display: none; }
+        .calc-result.show { display: block; animation: slideUp 0.5s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .form-group { margin-bottom: 24px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #0f172a; }
+        .radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .radio-label { cursor: pointer; }
+        .radio-label input { display: none; }
+        .radio-box { padding: 20px; border: 2px solid #e2e8f0; border-radius: 12px; text-align: center; transition: all 0.3s; }
+        .radio-label input:checked + .radio-box { border-color: #2563eb; background: rgba(37,99,235,0.05); }
+        .radio-box i { font-size: 28px; color: #2563eb; margin-bottom: 8px; display: block; }
+        select, input[type="text"], input[type="tel"] { width: 100%; padding: 14px 16px; border: 2px solid #e2e8f0; border-radius: 10px; font-size: 15px; font-family: inherit; }
+        select:focus, input:focus { outline: none; border-color: #2563eb; }
+        .checkbox-label { display: flex; align-items: center; gap: 12px; padding: 16px; border: 2px solid #e2e8f0; border-radius: 10px; cursor: pointer; transition: all 0.3s; }
+        .checkbox-label:hover { border-color: #2563eb; }
+        .checkbox-label input { width: 20px; height: 20px; accent-color: #2563eb; }
+        .calc-btn { width: 100%; padding: 18px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #fff; border: none; border-radius: 12px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37,99,235,0.4); }
+        .price-display { text-align: center; padding: 40px; background: linear-gradient(135deg, #f0f9ff 0%, #fff 100%); border-radius: 16px; margin-bottom: 24px; }
+        .price-display h3 { color: #64748b; margin-bottom: 16px; }
+        .price-big { font-size: 48px; font-weight: 800; color: #2563eb; }
+        .price-note { color: #64748b; margin-top: 8px; }
+        .features-list { background: #f8fafc; padding: 24px; border-radius: 12px; margin-bottom: 24px; }
+        .features-list h4 { margin-bottom: 16px; color: #0f172a; }
+        .features-list ul { list-style: none; padding: 0; }
+        .features-list li { padding: 8px 0; color: #64748b; }
+        .features-list i { color: #10b981; margin-right: 8px; }
+        .info-box { background: #fef3c7; padding: 20px; border-radius: 12px; margin-top: 24px; }
+        .info-box h4 { color: #92400e; margin-bottom: 12px; }
+        .info-box ul { margin: 0; padding-left: 20px; color: #78350f; }
+        .info-box li { margin-bottom: 8px; }
+        @media (max-width: 992px) { .calculator-container { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-truck-moving"></i></div>
+                <div class="logo-text"><span class="logo-main">HASKAYA</span><span class="logo-sub">NAKLİYAT</span></div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="index.html#about">Hakkımızda</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Hizmetlerimiz <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="evden-eve-nakliyat.html">Evden Eve Nakliyat</a></li>
+                        <li><a href="sehirler-arasi-nakliyat.html">Şehirler Arası</a></li>
+                        <li><a href="ofis-tasimaciligi.html">Ofis Taşıma</a></li>
+                    </ul>
+                </li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="fiyat-hesaplama.html" class="active">Fiyat Hesapla</a></li>
+                <li><a href="index.html#contact">İletişim</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="tel:+902120000000" class="phone-btn"><i class="fas fa-phone-alt"></i><span>0212 000 00 00</span></a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="index.html#services">Hizmetlerimiz</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="fiyat-hesaplama.html">Fiyat Hesaplama</a></li>
+            <li><a href="index.html#contact">İletişim</a></li>
+        </ul>
+    </div>
+
+    <section class="calculator-page">
+        <div class="container" style="text-align: center; color: #fff; margin-bottom: 40px;">
+            <h1 style="font-size: 42px; margin-bottom: 16px;">Nakliyat Fiyat Hesaplama</h1>
+            <p style="font-size: 18px; opacity: 0.9;">Taşıma bilgilerinizi girin, yaklaşık fiyatı anında öğrenin</p>
+        </div>
+
+        <div class="calculator-container">
+            <!-- Form -->
+            <div class="calc-form">
+                <h2 style="margin-bottom: 30px; color: #0f172a;">Taşıma Bilgileri</h2>
+                
+                <div class="form-group">
+                    <label>Taşıma Tipi</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="moveType" value="sehirici" checked onchange="updateForm()">
+                            <div class="radio-box">
+                                <i class="fas fa-home"></i>
+                                <span>Şehir İçi</span>
+                            </div>
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="moveType" value="sehirlerarasi" onchange="updateForm()">
+                            <div class="radio-box">
+                                <i class="fas fa-city"></i>
+                                <span>Şehirler Arası</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Ev Büyüklüğü</label>
+                    <select id="evBuyuklugu">
+                        <option value="0">Seçiniz</option>
+                        <option value="1">1+0 Stüdyo</option>
+                        <option value="2">1+1 Daire</option>
+                        <option value="3" selected>2+1 Daire</option>
+                        <option value="4">3+1 Daire</option>
+                        <option value="5">4+1 Daire / Villa</option>
+                    </select>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                    <div class="form-group">
+                        <label>Eski Adres Katı</label>
+                        <select id="eskiKat">
+                            <option value="0">Zemin</option>
+                            <option value="1">1. Kat</option>
+                            <option value="2">2. Kat</option>
+                            <option value="3" selected>3. Kat</option>
+                            <option value="4">4. Kat</option>
+                            <option value="5">5+ Kat</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Yeni Adres Katı</label>
+                        <select id="yeniKat">
+                            <option value="0">Zemin</option>
+                            <option value="1">1. Kat</option>
+                            <option value="2" selected>2. Kat</option>
+                            <option value="3">3. Kat</option>
+                            <option value="4">4. Kat</option>
+                            <option value="5">5+ Kat</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" id="sehirlerDiv" style="display: none;">
+                    <label>Gidilecek Şehir</label>
+                    <select id="sehirler">
+                        <option value="450">Ankara (450 km)</option>
+                        <option value="480">İzmir (480 km)</option>
+                        <option value="240">Bursa (240 km)</option>
+                        <option value="720">Antalya (720 km)</option>
+                        <option value="550">Konya (550 km)</option>
+                        <option value="800">Trabzon (800 km)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="asansor">
+                        <span><strong>Asansörlü Taşıma</strong> İstiyorum</span>
+                        <span style="margin-left: auto; color: #64748b;">+1.000 - 2.000 TL</span>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="paketleme" checked disabled>
+                        <span><strong>Profesyonel Paketleme</strong></span>
+                        <span style="margin-left: auto; color: #10b981;">Dahil</span>
+                    </label>
+                </div>
+
+                <button class="calc-btn" onclick="hesaplaFiyat()">
+                    <i class="fas fa-calculator"></i> Fiyat Hesapla
+                </button>
+            </div>
+
+            <!-- Result -->
+            <div class="calc-result" id="sonucKart">
+                <div class="price-display">
+                    <h3>Yaklaşık Fiyat Aralığı</h3>
+                    <div class="price-big">
+                        <span id="minFiyat">0</span> - <span id="maxFiyat">0</span> TL
+                    </div>
+                    <p class="price-note">KDV Dahil</p>
+                </div>
+
+                <div class="features-list">
+                    <h4>Fiyat İçeriği:</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Profesyonel paketleme</li>
+                        <li><i class="fas fa-check"></i>Mobilya sökme/takma</li>
+                        <li><i class="fas fa-check"></i>Nakliye aracı ve personel</li>
+                        <li><i class="fas fa-check"></i>Sigorta</li>
+                    </ul>
+                </div>
+
+                <a href="tel:+902120000000" style="display: block; text-align: center; padding: 16px; background: #10b981; color: #fff; text-decoration: none; border-radius: 12px; font-weight: 600;">
+                    <i class="fas fa-phone"></i> Hemen Arayın
+                </a>
+            </div>
+
+            <!-- Info Box (başlangıçta göster) -->
+            <div class="info-box" id="infoBox">
+                <h4><i class="fas fa-info-circle"></i> Bilgilendirme</h4>
+                <ul>
+                    <li>Hesaplanan fiyatlar yaklaşık değerlerdir.</li>
+                    <li>Kesin fiyat için ücretsiz ekspertiz yapılır.</li>
+                    <li>Eşya miktarına göre fiyat değişebilir.</li>
+                    <li>Tüm fiyatlarımıza KDV dahildir.</li>
+                    <li>Hafta sonu taşımacılıkta %10 fark olabilir.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Tables -->
+    <section style="padding: 80px 0; background: #fff;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px; font-size: 32px;">2024 Yılı Fiyat Tablosu</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                <div>
+                    <h3 style="margin-bottom: 20px; color: #0f172a;"><i class="fas fa-map-marker-alt" style="color: #2563eb; margin-right: 8px;"></i>İstanbul İçi Taşıma</h3>
+                    <div style="background: #f8fafc; border-radius: 16px; overflow: hidden;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #2563eb; color: #fff;">
+                                    <th style="padding: 16px; text-align: left;">Ev Büyüklüğü</th>
+                                    <th style="padding: 16px; text-align: right;">Fiyat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 14px 16px;">1+0 Stüdyo</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">2.500 - 4.000 TL</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 14px 16px;">1+1 Daire</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">3.500 - 5.500 TL</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 14px 16px;">2+1 Daire</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">4.500 - 7.500 TL</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 14px 16px;">3+1 Daire</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">5.500 - 9.500 TL</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 14px 16px;">4+1 / Villa</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">7.500 - 15.000 TL</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="margin-bottom: 20px; color: #0f172a;"><i class="fas fa-road" style="color: #2563eb; margin-right: 8px;"></i>Şehirler Arası (2+1)</h3>
+                    <div style="background: #f8fafc; border-radius: 16px; overflow: hidden;">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="background: #2563eb; color: #fff;">
+                                    <th style="padding: 16px; text-align: left;">Güzergah</th>
+                                    <th style="padding: 16px; text-align: right;">Fiyat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 14px 16px;">İstanbul - Ankara</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">15.000 - 19.000 TL</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 14px 16px;">İstanbul - İzmir</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">15.000 - 19.000 TL</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 14px 16px;">İstanbul - Bursa</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">13.000 - 16.000 TL</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #e2e8f0;">
+                                    <td style="padding: 14px 16px;">İstanbul - Antalya</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">20.000 - 25.000 TL</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 14px 16px;">İstanbul - Trabzon</td>
+                                    <td style="padding: 14px 16px; text-align: right; font-weight: 600;">25.000 - 32.000 TL</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="/" class="footer-logo">
+                            <div class="logo-icon"><i class="fas fa-truck-moving"></i></div>
+                            <div class="logo-text">
+                                <span class="logo-main">HASKAYA</span>
+                                <span class="logo-sub">NAKLİYAT</span>
+                            </div>
+                        </a>
+                        <p class="footer-desc">1996'dan beri İstanbul'da profesyonel nakliyat hizmetleri sunuyoruz.</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Hızlı Bağlantılar</h4>
+                        <ul>
+                            <li><a href="#home">Ana Sayfa</a></li>
+                            <li><a href="#about">Hakkımızda</a></li>
+                            <li><a href="#services">Hizmetlerimiz</a></li>
+                            <li><a href="evden-eve-nakliyat-fiyatlari.html">Fiyatlar</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Hizmetlerimiz</h4>
+                        <ul>
+                            <li><a href="evden-eve-nakliyat.html">Evden Eve Nakliyat</a></li>
+                            <li><a href="sehirler-arasi-nakliyat.html">Şehirler Arası Nakliyat</a></li>
+                            <li><a href="ofis-tasimaciligi.html">Ofis Taşımacılığı</a></li>
+                            <li><a href="esya-depolama.html">Eşya Depolama</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>İletişim</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i><a href="tel:+902120000000">0212 000 00 00</a></li>
+                            <li><i class="fas fa-envelope"></i><a href="mailto:info@haskayanakliyat.com.tr">info@haskayanakliyat.com.tr</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 1996 - 2024 Haskaya Nakliyat. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function updateForm() {
+            const moveType = document.querySelector('input[name="moveType"]:checked').value;
+            const sehirlerDiv = document.getElementById('sehirlerDiv');
+            
+            if (moveType === 'sehirlerarasi') {
+                sehirlerDiv.style.display = 'block';
+            } else {
+                sehirlerDiv.style.display = 'none';
+            }
+        }
+
+        function hesaplaFiyat() {
+            const evBuyuklugu = parseInt(document.getElementById('evBuyuklugu').value);
+            const eskiKat = parseInt(document.getElementById('eskiKat').value);
+            const yeniKat = parseInt(document.getElementById('yeniKat').value);
+            const asansor = document.getElementById('asansor').checked;
+            const moveType = document.querySelector('input[name="moveType"]:checked').value;
+            const mesafe = parseInt(document.getElementById('sehirler').value) || 0;
+
+            if (evBuyuklugu === 0) {
+                alert('Lütfen ev büyüklüğü seçiniz.');
+                return;
+            }
+
+            // Temel fiyatlar
+            const fiyatlar = {
+                1: { min: 2500, max: 4000 },
+                2: { min: 3500, max: 5500 },
+                3: { min: 4500, max: 7500 },
+                4: { min: 5500, max: 9500 },
+                5: { min: 7500, max: 15000 }
+            };
+
+            let minFiyat = fiyatlar[evBuyuklugu].min;
+            let maxFiyat = fiyatlar[evBuyuklugu].max;
+
+            // Kat farkı
+            const maxKat = Math.max(eskiKat, yeniKat);
+            if (maxKat >= 3) {
+                const katFarki = (maxKat - 2) * 500;
+                minFiyat += katFarki;
+                maxFiyat += katFarki;
+            }
+
+            // Asansör
+            if (asansor) {
+                minFiyat += 1000;
+                maxFiyat += 2000;
+            }
+
+            // Şehirler arası
+            if (moveType === 'sehirlerarasi' && mesafe > 0) {
+                const kmUcreti = mesafe * 15;
+                minFiyat += kmUcreti;
+                maxFiyat += kmUcreti + 4000;
+            }
+
+            // Sonuç göster
+            document.getElementById('infoBox').style.display = 'none';
+            document.getElementById('sonucKart').classList.add('show');
+            document.getElementById('minFiyat').textContent = minFiyat.toLocaleString('tr-TR');
+            document.getElementById('maxFiyat').textContent = maxFiyat.toLocaleString('tr-TR');
+
+            // Scroll to result
+            document.getElementById('sonucKart').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateForm();
+        });
+    </script>
+</body>
+</html>
